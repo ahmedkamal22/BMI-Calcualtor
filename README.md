@@ -1,6 +1,6 @@
 # bmi_calcualtor
 
-App to calc age  and result.
+App to calc age ,weight,height and result.
 
 ## Getting Started
 

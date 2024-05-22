@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BMIRESULT extends StatelessWidget {
-  Color darkBlue = Color(0xff050c28);
+  Color darkBlue = const Color(0xff050c28);
   bool isMale;
-  int? Height = 180;
-  int? Weight = 60;
+  int? height = 180;
+  int? weight = 60;
   int? age = 28;
   int? result = 50;
 
   BMIRESULT({
     @required this.result,
-    @required this.Height,
-    @required this.Weight,
-    @required this.isMale = true,
+    @required this.height,
+    @required this.weight,
+    this.isMale = true,
     @required this.age,
   });
 
@@ -21,8 +20,16 @@ class BMIRESULT extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("RESULT"),
+        title: Text(
+          "RESULT",
+          style: TextStyle(color: Colors.grey[300]),
+        ),
         centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.grey[300])),
         backgroundColor: darkBlue,
       ),
       body: Container(
@@ -40,21 +47,21 @@ class BMIRESULT extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.grey[300]),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Text(
-                    "${isMale ? "MALE" : "FEMALE"}",
-                    style: TextStyle(
+                    isMale ? "MALE" : "FEMALE",
+                    style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.redAccent),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -67,25 +74,25 @@ class BMIRESULT extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.grey[300]),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Text(
-                    "$Height",
-                    style: TextStyle(
+                    "$height",
+                    style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.redAccent),
                   ),
-                  Text(
+                  const Text(
                     "cm",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -96,21 +103,21 @@ class BMIRESULT extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.grey[300]),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Text(
-                    "$Weight",
-                    style: TextStyle(
+                    "$weight",
+                    style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.redAccent),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -121,21 +128,21 @@ class BMIRESULT extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Colors.grey[300]),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Text(
                     "$age",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.redAccent),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -147,19 +154,19 @@ class BMIRESULT extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "RESULT :",
                         style: TextStyle(
                             fontSize: 30.0,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20.0,
                       ),
                       Text(
                         "$result",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 25.0,
                             fontWeight: FontWeight.w900,
                             color: Colors.blue),

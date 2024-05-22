@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:bmi_calcualtor/bmi_result.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class BMIScreen extends StatefulWidget {
   @override
@@ -10,18 +9,22 @@ class BMIScreen extends StatefulWidget {
 }
 
 class _BMIScreenState extends State<BMIScreen> {
-  Color darkBlue = Color(0xff050c28);
+  Color darkBlue = const Color(0xff050c28);
 
-  Color grey = Color(0x62FFFFFF);
+  Color grey = const Color(0x62FFFFFF);
   bool isMale = true;
-  double Height = 120.0;
-  int Weight = 60;
-  int Age = 28;
+  double height = 120.0;
+  int weight = 60;
+  int age = 28;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text(
+          'BMI CALCULATOR',
+          style: TextStyle(color: Colors.grey[300]),
+        ),
         centerTitle: true,
         backgroundColor: darkBlue,
       ),
@@ -47,7 +50,7 @@ class _BMIScreenState extends State<BMIScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
                               color: isMale ? Colors.blue : grey),
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image(
@@ -64,7 +67,7 @@ class _BMIScreenState extends State<BMIScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     //second picture[female]
@@ -79,7 +82,7 @@ class _BMIScreenState extends State<BMIScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
                               color: isMale ? grey : Colors.blue),
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image(
@@ -114,9 +117,10 @@ class _BMIScreenState extends State<BMIScreen> {
                     children: [
                       Text(
                         "HEIGHT",
-                        style: TextStyle(fontSize: 20.0),
+                        style:
+                            TextStyle(fontSize: 20.0, color: Colors.grey[300]),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5.0,
                       ),
                       Row(
@@ -125,24 +129,25 @@ class _BMIScreenState extends State<BMIScreen> {
                         textBaseline: TextBaseline.alphabetic,
                         children: [
                           Text(
-                            '${Height.round()}',
-                            style: TextStyle(
+                            '${height.round()}',
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w900,
                                 fontSize: 50.0,
                                 color: Colors.black),
                           ),
                           Text(
                             'cm',
+                            style: TextStyle(color: Colors.grey[300]),
                           ),
                         ],
                       ),
                       Slider(
-                        value: Height,
+                        value: height,
                         min: 80,
                         max: 220,
                         onChanged: (value) {
                           setState(() {
-                            Height = value;
+                            height = value;
                           });
                         },
                         activeColor: Colors.black,
@@ -170,11 +175,12 @@ class _BMIScreenState extends State<BMIScreen> {
                           children: [
                             Text(
                               'WEIGHT',
-                              style: TextStyle(fontSize: 25.0),
+                              style: TextStyle(
+                                  fontSize: 25.0, color: Colors.grey[300]),
                             ),
                             Text(
-                              '$Weight',
-                              style: TextStyle(
+                              '$weight',
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w900,
                                   fontSize: 50.0,
                                   color: Colors.black),
@@ -185,36 +191,39 @@ class _BMIScreenState extends State<BMIScreen> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      if (Weight == 0) {
-                                        Weight++;
+                                      if (weight == 0) {
+                                        weight++;
                                       } else {
-                                        Weight--;
+                                        weight--;
                                       }
                                     });
                                   },
-                                  child: Icon(
-                                    Icons.remove,
-                                  ),
+                                  child: Icon(Icons.remove,
+                                      color: Colors.grey[300]),
+                                  mini: true,
                                   backgroundColor: darkBlue,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15.0,
                                 ),
                                 FloatingActionButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        Weight++;
-                                      });
-                                    },
-                                    child: Icon(Icons.add),
-                                    backgroundColor: darkBlue),
+                                  onPressed: () {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  },
+                                  child:
+                                      Icon(Icons.add, color: Colors.grey[300]),
+                                  backgroundColor: darkBlue,
+                                  mini: true,
+                                ),
                               ],
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10.0,
                     ),
                     Expanded(
@@ -227,11 +236,12 @@ class _BMIScreenState extends State<BMIScreen> {
                           children: [
                             Text(
                               'AGE',
-                              style: TextStyle(fontSize: 25.0),
+                              style: TextStyle(
+                                  fontSize: 25.0, color: Colors.grey[300]),
                             ),
                             Text(
-                              '$Age',
-                              style: TextStyle(
+                              '$age',
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w900,
                                   fontSize: 50.0,
                                   color: Colors.black),
@@ -242,28 +252,30 @@ class _BMIScreenState extends State<BMIScreen> {
                                 FloatingActionButton(
                                   onPressed: () {
                                     setState(() {
-                                      if (Age == 0) {
-                                        Age++;
+                                      if (age == 0) {
+                                        age++;
                                       } else {
-                                        Age--;
+                                        age--;
                                       }
                                     });
                                   },
-                                  child: Icon(
-                                    Icons.remove,
-                                  ),
+                                  child: Icon(Icons.remove,
+                                      color: Colors.grey[300]),
+                                  mini: true,
                                   backgroundColor: darkBlue,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15.0,
                                 ),
                                 FloatingActionButton(
                                     onPressed: () {
                                       setState(() {
-                                        Age++;
+                                        age++;
                                       });
                                     },
-                                    child: Icon(Icons.add),
+                                    child: Icon(Icons.add,
+                                        color: Colors.grey[300]),
+                                    mini: true,
                                     backgroundColor: darkBlue),
                               ],
                             ),
@@ -282,23 +294,37 @@ class _BMIScreenState extends State<BMIScreen> {
               height: 60.0,
               child: MaterialButton(
                 onPressed: () {
-                  double result = Weight / pow(Height / 100, 2);
-                  print(result.round());
+                  double result = weight / pow(height / 100, 2);
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => BMIRESULT(
-                                age: Age,
-                                Height: Height.round(),
-                                result: result.round(),
-                                isMale: isMale,
-                                Weight: Weight,
-                              )));
+                      PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  BMIRESULT(
+                                    age: age,
+                                    height: height.round(),
+                                    result: result.round(),
+                                    isMale: isMale,
+                                    weight: weight,
+                                  ),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            const begin = Offset(1.0, 0.0);
+                            const end = Offset.zero;
+                            const curve = Curves.easeInOut;
+                            var tween = Tween(begin: begin, end: end)
+                                .chain(CurveTween(curve: curve));
+                            var offsetAnimation = animation.drive(tween);
+                            return SlideTransition(
+                              position: offsetAnimation,
+                              child: child,
+                            );
+                          }));
                 },
                 child: Text(
                   "CALCULATE",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.grey[300],
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold),
                 ),

@@ -21,3 +21,8 @@ sizes.
 **Health Insights**
 **BMI Categories**: Understand your BMI result with categorized insights, indicating whether you are
 underweight, normal weight, overweight, or obese.
+
+**BMI Calculator Screens**
+
+![1](https://github.com/ahmedkamal22/BMI-Calcualtor/assets/79015886/960a7f3e-8ba8-45e6-ae5d-f3782ec2fb0e)
+![2](https://github.com/ahmedkamal22/BMI-Calcualtor/assets/79015886/4a1db93f-7dad-47cf-bfe1-341b40bd0da6)
